@@ -18,6 +18,7 @@ module Christmas
       x1, y1 = start
       x2, y2 = last
       (x1..x2).each { |x| turn_on(x, y1) }
+      (y1..y2).each { |y| turn_on(x1, y) }
     end
 
     def turn_on(x, y)
