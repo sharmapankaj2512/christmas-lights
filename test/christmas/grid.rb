@@ -9,11 +9,19 @@ module Christmas
     end
 
     def on_count
-      @lights.flatten.count { |light| light == 1 }
+      @lights.flatten.count { |light| on?(light) }
     end
 
     def off_count
-      @lights.flatten.count { |light| light == 0 }
+      @lights.flatten.count { |light| off?(light) }
+    end
+
+    def on?(light)
+      light == 1
+    end
+
+    def off?(light)
+      light == 0
     end
   end
 end
