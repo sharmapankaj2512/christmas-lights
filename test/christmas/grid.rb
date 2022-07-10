@@ -14,6 +14,12 @@ module Christmas
       @lights[x][y] = 0
     end
 
+    def turn_on_range(start, last)
+      x1, y1 = start
+      x2, y2 = last
+      (x1..x2).each { |x| turn_on(x, y1) }
+    end
+
     def turn_on(x, y)
       @lights[x][y] = 1
     end
