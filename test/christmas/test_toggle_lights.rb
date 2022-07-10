@@ -20,5 +20,13 @@ module Christmas
       assert_equal 4, grid.on_count
       assert_equal 0, grid.off_count
     end
+
+    def test_toggle_two_by_two_horizontal_line
+      grid = Grid.new(2)
+      grid.toggle_range([0, 0], [1, 0])
+
+      assert_equal 2, grid.on_count
+      assert_equal 2, grid.off_count
+    end
   end
 end

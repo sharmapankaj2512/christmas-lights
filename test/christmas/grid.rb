@@ -24,6 +24,12 @@ module Christmas
       @lights[x][y] = 1
     end
 
+    def toggle_range(start, last)
+      x1, y1 = start
+      x2, y2 = last
+      (x1..x2).each { |x| toggle(x, y1) }
+    end
+
     def toggle(x, y)
       if on?(@lights[x][y])
         turn_off(x, y)
