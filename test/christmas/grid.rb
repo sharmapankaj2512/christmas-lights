@@ -12,6 +12,14 @@ module Christmas
       @lights[x][y] = 1
     end
 
+    def toggle(x, y)
+      if on?(@lights[x][y])
+        turn_off(x, y)
+      else
+        turn_on(x, y)
+      end
+    end
+
     def on_count
       @lights.flatten.count { |light| on?(light) }
     end
