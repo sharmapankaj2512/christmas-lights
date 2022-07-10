@@ -7,8 +7,7 @@ module Christmas
     def turn_off_range(start, last)
       x1, y1 = start
       x2, y2 = last
-      (x1..x2).each { |x| turn_off(x, y1) }
-      (y1..y2).each { |y| turn_off(x1, y) }
+      (x1..x2).each { |x| (y1..y2).each { |y| turn_off(x, y) } }
     end
 
     def turn_off(x, y)
