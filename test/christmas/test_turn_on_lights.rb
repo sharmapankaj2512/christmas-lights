@@ -30,13 +30,22 @@ module Christmas
       assert_equal 2, grid.off_count
     end
 
-    def test_lights_off_two_by_two_vertical_line
+    def test_lights_on_two_by_two_vertical_line
       grid = Grid.new(2)
       grid.turn_off_range([0, 0], [1, 1])
       grid.turn_on_range([0, 0], [0, 1])
 
       assert_equal 2, grid.on_count
       assert_equal 2, grid.off_count
+    end
+
+    def test_lights_on_two_by_two_square
+      grid = Grid.new(2)
+      grid.turn_off_range([0, 0], [1, 1])
+      grid.turn_on_range([0, 0], [1, 1])
+
+      assert_equal 4, grid.on_count
+      assert_equal 0, grid.off_count
     end
   end
 end
