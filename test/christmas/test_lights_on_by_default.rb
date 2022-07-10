@@ -1,18 +1,7 @@
 require "test_helper"
+require "christmas/grid"
 
 module Christmas
-  class Grid
-    def initialize(length, breadth); end
-
-    def on_count
-      1
-    end
-
-    def off_count
-      0
-    end
-  end
-
   class TestLightsOnByDefault < Minitest::Test
     def test_lights_on_by_default
       grid = Grid.new(1, 1)
