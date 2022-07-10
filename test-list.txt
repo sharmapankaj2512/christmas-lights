@@ -1,0 +1,24 @@
+purpose lighting grid
+
+
+- one by one grid
+    - turn on a single light
+    - turn off a single light
+    - toggle a single light
+    - how many lights are on
+    - how many lights are off
+
+- two by two grid
+    - turn on a single light
+    - turn off a single light
+    - toggle a single light
+    - how many lights are on
+    - how many lights are off
+
+    - turn on a line of lights
+    - turn off a line of lights
+    - toggle a line of lights
+
+    - turn on a block of lights
+    - turn off a block of lights
+    - toggle a block of lights
