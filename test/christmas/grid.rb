@@ -27,12 +27,7 @@ module Christmas
     def toggle_range(start, last)
       x1, y1 = start
       x2, y2 = last
-      if x1 != x2
-        (x1..x2).each { |x| toggle(x, y1) }
-      end
-      if y1 != y2
-        (y1..y2).each { |y| toggle(x1, y) }
-      end
+      (x1..x2).each { |x| (y1..y2).each { |y| toggle(x, y) } }
     end
 
     def toggle(x, y)
