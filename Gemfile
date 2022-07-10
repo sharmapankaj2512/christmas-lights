@@ -12,3 +12,4 @@ gem "minitest", "~> 5.0"
 gem "rubocop", "~> 1.21"
 
 gem "ruby-lsp", "~> 0.2.0", :group => :development
+gem 'minitest-reporters', :group => :development
