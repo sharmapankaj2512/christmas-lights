@@ -1,7 +1,7 @@
 module Christmas
   class Grid
-    def initialize(length, breadth)
-      @lights = Array.new(length) { Array.new(breadth) { 1 } }
+    def initialize(size)
+      @lights = Array.new(size) { Array.new(size) { 1 } }
     end
 
     def turn_off(x, y)
