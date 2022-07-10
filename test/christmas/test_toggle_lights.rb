@@ -11,5 +11,14 @@ module Christmas
       assert_equal 1, grid.on_count
       assert_equal 0, grid.off_count
     end
+
+    def test_toggle_two_by_two
+      grid = Grid.new(2)
+      grid.toggle(0, 1)
+      grid.toggle(0, 1)
+
+      assert_equal 4, grid.on_count
+      assert_equal 0, grid.off_count
+    end
   end
 end
