@@ -8,6 +8,10 @@ module Christmas
       @lights[x][y] = 0
     end
 
+    def turn_on(x, y)
+      @lights[x][y] = 1
+    end
+
     def on_count
       @lights.flatten.count { |light| on?(light) }
     end
