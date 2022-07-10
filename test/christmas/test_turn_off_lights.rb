@@ -3,7 +3,7 @@ require "christmas/grid"
 
 module Christmas
   class TestTurnLightsOff < Minitest::Test
-    def test_lights_off
+    def test_light_off
       grid = Grid.new(1)
       grid.turn_off(0, 0)
 
