@@ -3,14 +3,19 @@ require "christmas/grid"
 
 module Christmas
   class TestLightsOnByDefault < Minitest::Test
-    def test_lights_on_by_default
-      grid = Grid.new(1)
-      assert_equal 1, grid.on_count
-      assert_equal 0, grid.off_count
+    [
+      [1, 1, 0],
+      [2, 4, 0]
+    ].each do |data|
+      size = data[0]
+      expected_on_count = data[1]
+      expected_off_count = data[2]
 
-      grid = Grid.new(2)
-      assert_equal 4, grid.on_count
-      assert_equal 0, grid.off_count
+      define_method("test_lights_on_by_default #{size}, #{expected_on_count}, #{expected_off_count}") do
+        grid = Grid.new(size)
+        assert_equal expected_on_count, grid.on_count
+        assert_equal expected_off_count, grid.off_count
+      end
     end
   end
 end
