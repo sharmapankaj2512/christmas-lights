@@ -9,7 +9,7 @@ module Christmas
       x2 = last[0]
       y1 = start[1]
       y2 = last[1]
-      (x1..x2).each { |x| turn_off(x, start[1]) }
+      (x1..x2).each { |x| turn_off(x, y1) }
       (y1..y2).each { |y| turn_off(x1, y) }
     end
 
