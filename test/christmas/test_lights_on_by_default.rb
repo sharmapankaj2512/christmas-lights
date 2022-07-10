@@ -7,6 +7,10 @@ module Christmas
       grid = Grid.new(1)
       assert_equal 1, grid.on_count
       assert_equal 0, grid.off_count
+
+      grid = Grid.new(2)
+      assert_equal 4, grid.on_count
+      assert_equal 0, grid.off_count
     end
   end
 end
