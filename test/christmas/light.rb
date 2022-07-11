@@ -12,20 +12,16 @@ module Christmas
       @state = 1
     end
 
-    def toggle
-      if on?
-        turn_off
-      else
-        turn_on
-      end
+    def off?
+      @state.zero?
     end
 
     def on?
-      @state == 1
+      !off?
     end
 
-    def off?
-      @state == 0
+    def toggle
+      on? ? turn_off : turn_on
     end
   end
 end
