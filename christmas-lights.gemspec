@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/christmas/lights/version"
-
 Gem::Specification.new do |spec|
   spec.name = "christmas-lights"
-  spec.version = Christmas::Lights::VERSION
+  spec.version = "0.0.1"
   spec.authors = ["Pankaj Sharma"]
   spec.email = ["sharmapankaj2512@gmail.com"]
 
