@@ -5,7 +5,7 @@ module Christmas
   class TestTurnLightsOff < Minitest::Test
     def test_light_off
       grid = Grid.new(1)
-      grid.turn_off([0, 0], [0, 0])
+      grid.turn_off(TwoDimensionalRange.new([0, 0], [0, 0]))
 
       assert_equal 0, grid.on_count
       assert_equal 1, grid.off_count
@@ -13,7 +13,7 @@ module Christmas
 
     def test_light_off_two_by_two
       grid = Grid.new(2)
-      grid.turn_off([0, 1], [0, 1])
+      grid.turn_off(TwoDimensionalRange.new([0, 1], [0, 1]))
 
       assert_equal 3, grid.on_count
       assert_equal 1, grid.off_count
@@ -21,7 +21,7 @@ module Christmas
 
     def test_lights_off_two_by_two_horizontal_line
       grid = Grid.new(2)
-      grid.turn_off([0, 0], [1, 0])
+      grid.turn_off(TwoDimensionalRange.new([0, 0], [1, 0]))
 
       assert_equal 2, grid.on_count
       assert_equal 2, grid.off_count
@@ -29,7 +29,7 @@ module Christmas
 
     def test_lights_off_two_by_two_vertical_line
       grid = Grid.new(2)
-      grid.turn_off([0, 0], [0, 1])
+      grid.turn_off(TwoDimensionalRange.new([0, 0], [0, 1]))
 
       assert_equal 2, grid.on_count
       assert_equal 2, grid.off_count
@@ -37,7 +37,7 @@ module Christmas
 
     def test_lights_off_two_by_two_square
       grid = Grid.new(2)
-      grid.turn_off([0, 0], [1, 1])
+      grid.turn_off(TwoDimensionalRange.new([0, 0], [1, 1]))
 
       assert_equal 0, grid.on_count
       assert_equal 4, grid.off_count

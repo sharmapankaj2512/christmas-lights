@@ -21,23 +21,22 @@ module Christmas
       @lights = Array.new(size) { Array.new(size) { Light.new } }
     end
 
-    def turn_off(start, last)
-      apply(start, last, :turn_off)
+    def turn_off(range)
+      apply(range, :turn_off)
     end
 
-    def turn_on(start, last)
-      apply(start, last, :turn_on)
+    def turn_on(range)
+      apply(range, :turn_on)
     end
 
-    def toggle(start, last)
-      apply(start, last, :toggle)
+    def toggle(range)
+      apply(range, :toggle)
     end
 
-    def apply(start, last, action)
-      TwoDimensionalRange.new(start, last)
-                         .points
-                         .map { |(x, y)| @lights[x][y] }
-                         .each(&action)
+    def apply(range, action)
+      range.points
+           .map { |(x, y)| @lights[x][y] }
+           .each(&action)
     end
 
     def on_count
