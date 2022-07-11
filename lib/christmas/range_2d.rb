@@ -1,5 +1,5 @@
 module Christmas
-  class TwoDimensionalRange
+  class Range2D
     def initialize(start, finish)
       @x1 = start[0]
       @y1 = start[1]

@@ -1,5 +1,5 @@
 require "christmas/light"
-require "christmas/two_dimensional_range"
+require "christmas/range_2d"
 
 module Christmas
   class Grid
