@@ -3,7 +3,7 @@ require "christmas/light"
 module Christmas
   class Grid
     def initialize(size)
-      @lights1 = Array.new(size) { Array.new(size) { Light.new } }
+      @lights = Array.new(size) { Array.new(size) { Light.new } }
     end
 
     def turn_off_range(start, last)
@@ -13,7 +13,7 @@ module Christmas
     end
 
     def turn_off(x, y)
-      @lights1[x][y].turn_off
+      @lights[x][y].turn_off
     end
 
     def turn_on_range(start, last)
@@ -23,7 +23,7 @@ module Christmas
     end
 
     def turn_on(x, y)
-      @lights1[x][y].turn_on
+      @lights[x][y].turn_on
     end
 
     def toggle_range(start, last)
@@ -33,15 +33,15 @@ module Christmas
     end
 
     def toggle(x, y)
-      @lights1[x][y].toggle
+      @lights[x][y].toggle
     end
 
     def on_count
-      @lights1.flatten.count(&:on?)
+      @lights.flatten.count(&:on?)
     end
 
     def off_count
-      @lights1.flatten.count(&:off?)
+      @lights.flatten.count(&:off?)
     end
   end
 end
