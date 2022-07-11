@@ -1,7 +1,37 @@
 module Christmas
+  class Light
+    def initialize
+      @state = 1
+    end
+
+    def turn_off
+      @state = 0
+    end
+
+    def turn_on
+      @state = 1
+    end
+
+    def toggle
+      if on?
+        turn_off
+      else
+        turn_on
+      end
+    end
+
+    def on?
+      @state == 1
+    end
+
+    def off?
+      @state == 0
+    end
+  end
+
   class Grid
     def initialize(size)
-      @lights = Array.new(size) { Array.new(size) { 1 } }
+      @lights1 = Array.new(size) { Array.new(size) { Light.new } }
     end
 
     def turn_off_range(start, last)
@@ -11,7 +41,7 @@ module Christmas
     end
 
     def turn_off(x, y)
-      @lights[x][y] = 0
+      @lights1[x][y].turn_off
     end
 
     def turn_on_range(start, last)
@@ -21,7 +51,7 @@ module Christmas
     end
 
     def turn_on(x, y)
-      @lights[x][y] = 1
+      @lights1[x][y].turn_on
     end
 
     def toggle_range(start, last)
@@ -31,27 +61,15 @@ module Christmas
     end
 
     def toggle(x, y)
-      if on?(@lights[x][y])
-        turn_off(x, y)
-      else
-        turn_on(x, y)
-      end
+      @lights1[x][y].toggle
     end
 
     def on_count
-      @lights.flatten.count { |light| on?(light) }
+      @lights1.flatten.count(&:on?)
     end
 
     def off_count
-      @lights.flatten.count { |light| off?(light) }
-    end
-
-    def on?(light)
-      light == 1
-    end
-
-    def off?(light)
-      light == 0
+      @lights1.flatten.count(&:off?)
     end
   end
 end
