@@ -12,5 +12,9 @@ module Christmas
       ys = *(@y1..@y2)
       xs.product ys
     end
+
+    def transform(action)
+      points.map { |x, y| action.call(x, y) }
+    end
   end
 end

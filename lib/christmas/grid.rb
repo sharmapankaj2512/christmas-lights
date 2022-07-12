@@ -5,24 +5,19 @@ module Christmas
   class Grid
     def initialize(size)
       @lights = Array.new(size) { Array.new(size) { Light.new } }
+      @to_light = ->(x, y) { @lights[x][y] }
     end
 
     def turn_off(range)
-      apply(range, :turn_off)
+      range.transform(@to_light).each(&:turn_off)
     end
 
     def turn_on(range)
-      apply(range, :turn_on)
+      range.transform(@to_light).each(&:turn_on)
     end
 
     def toggle(range)
-      apply(range, :toggle)
-    end
-
-    def apply(range, action)
-      range.points
-           .map { |(x, y)| @lights[x][y] }
-           .each(&action)
+      range.transform(@to_light).each(&:toggle)
     end
 
     def on_count
